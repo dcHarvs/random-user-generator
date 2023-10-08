@@ -1,4 +1,8 @@
 export interface User {
+  id: {
+    name: string;
+    value: string;
+  };
   name: {
     title?: string;
     first: string;
