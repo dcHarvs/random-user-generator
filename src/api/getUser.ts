@@ -2,7 +2,9 @@ import { User } from "../lib/types/user";
 import axios from "axios";
 
 export default async function getUser() {
-  const { data: { results } } = await axios.get("https://randomuser.me/api");
+  const { data: { results } } = await axios.get("https://randomuser.me/api", {
+    timeout: 10_000,
+  });
   const { id, name, email, picture } = results[0] ?? {};
 
   const user: User = {
